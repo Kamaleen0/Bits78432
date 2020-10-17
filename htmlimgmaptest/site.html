@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+</head>
+<body>
+
+<img src="menu.png" usemap="#menu.png" alt="menu" id="photo">
+
+<map name="menu.png">
+    <area coords="339,123,484,317" shape="rect" onclick="changeImage('inside.png')">
+    <area coords="104,175,58" shape="circle" onclick="changeImage('well.png')">
+</map>
+
+<map name="well.png">
+    <area coords="301,0,411,239" shape="rect" onclick="changeImage('menu.png')">
+</map>
+
+<map name="inside.png">
+    <area coords="0,85,158,444" shape="rect" onclick="changeImage('menu.png')"></map>
+
+<script>
+    function changeImage(photo) {
+        document.getElementById("photo").src = photo;
+        document.getElementById("photo").setAttribute('usemap', `#${photo}`)
+    }
+</script>
+
+</body>
+</html>
