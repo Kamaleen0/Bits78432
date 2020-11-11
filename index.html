@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Game</title>
+    <link rel="preload" href="inside.png">
+    <link rel="preload" href="cellar.jpeg">
+    <link rel="preload" href="well.png">
 </head>
 <body>
 
-<img src="menu.png" usemap="#menu.png" alt="menu" id="photo">
+<img src="menu.png" usemap="#menu.png" alt="menu" id="photo" style="size: 400px">
+
+<img src="" style="visibility: hidden" width="0" height="0" id="loader">
 
 <map name="menu.png">
     <area coords="339,123,484,317" shape="rect" onclick="changeImage('inside.png')">
@@ -14,11 +19,17 @@
 </map>
 
 <map name="well.png">
-    <area coords="301,0,411,239" shape="rect" onclick="changeImage('menu.png')">
+    <area coords="369,312,511,427" shape="rect" onclick="changeImage('cellar.jpeg')">
+    <area coords="411,250,291,0,297,6" shape="rect" onclick="changeImage('menu.png')">
 </map>
 
 <map name="inside.png">
-    <area coords="0,85,158,444" shape="rect" onclick="changeImage('menu.png')"></map>
+    <area coords="0,85,158,444" shape="rect" onclick="changeImage('menu.png')">
+</map>
+
+<map name="cellar.jpeg">
+    <area coords="77,132,183,316" shape="rect" onclick="changeImage('well.png')">
+</map>
 
 <script>
     function changeImage(photo) {
